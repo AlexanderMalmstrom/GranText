@@ -39,5 +39,49 @@ namespace granText
         {
 
         }
+
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            float currentSize = mainTextBox.Font.Size;
+            currentSize += 2.0F;
+            mainTextBox.Font = new Font(mainTextBox.Font.Name, currentSize, mainTextBox.Font.Style, mainTextBox.Font.Unit);
+        }
+
+        private void mainTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click_1(object sender, EventArgs e)
+        {
+            float currentSize = mainTextBox.Font.Size;
+            currentSize -= 2.0F;
+            mainTextBox.Font = new Font(mainTextBox.Font.Name, currentSize, mainTextBox.Font.Style, mainTextBox.Font.Unit);
+        }
+
+        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainTextBox.ForeColor = Color.Black;
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainTextBox.ForeColor = Color.Red;
+        }
+
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainTextBox.ForeColor = Color.Blue;
+        }
+
+        private void pinkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainTextBox.ForeColor = Color.Pink;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
