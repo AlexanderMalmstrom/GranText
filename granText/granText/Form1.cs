@@ -15,6 +15,11 @@ namespace granText
 {
     public partial class Form1 : Form
     {
+        public static class Globals
+        {
+            public static Int32 formHeight;
+            public static Int32 formWidth;
+        }
         public Form1()
         {
             InitializeComponent();
@@ -82,6 +87,26 @@ namespace granText
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void hideToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            
+            if(this.Height > 63)
+            {
+                Globals.formHeight = this.Height;
+                Globals.formWidth = this.Width;
+                this.Width = 214;
+                this.Height = 63;
+                this.Opacity = 0.3;
+            }
+
+            else
+            {
+                this.Width = Globals.formWidth;
+                this.Height = Globals.formHeight;
+                this.Opacity = 1.0;
+            }
         }
     }
 }
