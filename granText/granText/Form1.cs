@@ -23,6 +23,7 @@ namespace granText
         public Form1()
         {
             InitializeComponent();
+            Application.EnableVisualStyles();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace granText
 
         private void mainTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            mainTextBox.ShortcutsEnabled = true;
         }
 
         private void toolStripMenuItem2_Click_1(object sender, EventArgs e)
@@ -108,5 +109,27 @@ namespace granText
                 this.Opacity = 1.0;
             }
         }
+
+        private void customToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ColorDialog MyDialog = new ColorDialog();
+            // Allows the user to select or edit a custom color.
+            MyDialog.AllowFullOpen = true;
+            // Assigns an array of custom colors to the CustomColors property
+
+            // Allows the user to get help. (The default is false.)
+            MyDialog.ShowHelp = true;
+            // Sets the initial color select to the current text color,
+            // so that if the user cancels out, the original color is restored.
+            MyDialog.Color = this.BackColor;
+            MyDialog.ShowDialog();
+            this.BackColor = MyDialog.Color;
+
+            Console.WriteLine(MyDialog.Color);
+
+            mainTextBox.ForeColor = MyDialog.Color;
+        }
+
+
     }
 }
